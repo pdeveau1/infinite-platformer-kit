@@ -11,9 +11,9 @@ class Platforms(pygame.sprite.Sprite):
 
   def scroll(self, change):
     #create a variable for display Info
-    #screen_info = pygame.display.Info()
+    screen_info = pygame.display.Info()
     self.rect.top += change
     #create an if statement that checks if the platform has reached the bottom of the screen and if it has reset it to the top of the screen
-    #if self.rect.top > screen_info.current_h:
-      #self.rect.top = -50
-      #self.rect.left = random.randint(5,(screen_info.current_w)//10)*10
+    if self.rect.top > screen_info.current_h:
+      self.rect.top = -50
+      self.rect.left = random.randint(5,(screen_info.current_w)//10)*10
