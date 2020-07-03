@@ -15,6 +15,13 @@ class Player(pygame.sprite.Sprite):
 
   def update(self,platforms):
     screen_info = pygame.display.Info()
+    #check if player is near end of screen
+    if self.rect.top >= screen_info.current_h - 80:
+      #switch image to look like falling
+      self.image = self.images["p1_hurt"]
+    else:
+      #otherwise keeps it as jumping image
+      self.image = self.images["p1_jump"]
     #update the image and direction
     if self.facing == "L":
       #flip on x-axis
